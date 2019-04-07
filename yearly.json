@@ -1,0 +1,33 @@
+﻿{
+    "provider": "trello",
+    "policies": [
+        {
+            "name": "create-daily-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "this week"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Visit someone in the ward",
+                                "due": "Tuesday@20:00"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

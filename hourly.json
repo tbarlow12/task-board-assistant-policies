@@ -1,0 +1,63 @@
+﻿{
+    "provider": "trello",
+    "policies": [
+        {
+            "name": "create-daily-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "done"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "resource": "card",
+                            "actions": [
+                                {
+                                    "type": "archive"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "create-daily-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "work"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "done"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "resource": "card",
+                            "actions": [
+                                {
+                                    "type": "archive"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
