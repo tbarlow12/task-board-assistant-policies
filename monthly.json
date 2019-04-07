@@ -1,10 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TaskBoardPolicies.policies
-{
-    class daily
-    {
-    }
+﻿{
+    "provider": "trello",
+    "policies": [
+        {
+            "name": "create-monthly-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "backlog"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Attend the temple",
+                                "due": "Today+14@10:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Pay tithing",
+                                "due": "Today+3@10:00"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

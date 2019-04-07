@@ -24,6 +24,62 @@
                                 "name": "Visit someone in the ward",
                                 "due": "Tuesday@20:00"
                             }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Make sure speaking assignments have been made",
+                                "due": "Sunday@20:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Make sure sacrament meeting spreadsheet is up to date",
+                                "due": "Friday@12:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Plan a date night for the week",
+                                "due": "Sunday@20:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Approve and send the newsletter for the week",
+                                "due": "Monday@13:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Reach out to a sibling",
+                                "due": "Tuesday@16:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Reach out to a mission companion or friend",
+                                "due": "Wednesday@16:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Reach out to a friend",
+                                "due": "Thursday@16:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Reach out to a mentor/contact in professional network",
+                                "due": "Monday@16:00"
+                            }
                         }
                     ]
                 }
