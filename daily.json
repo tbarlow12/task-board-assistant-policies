@@ -2,6 +2,33 @@
     "provider": "trello",
     "policies": [
         {
+            "name": "archive-done-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "done"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "resource": "card",
+                            "actions": [
+                                {"type": "archive"}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "create-daily-tasks",
             "resource": "board",
             "filters": [
@@ -14,20 +41,55 @@
                     "resource": "list",
                     "filters": [
                         {
-                            "name": "this week"
+                            "name": "today"
                         }
                     ],
                     "actions": [
                         {
                             "type": "addcard",
                             "params": {
-                                "name": "Visit someone in the ward",
-                                "due": "Tuesday@20:00"
+                                "name": "Gospel Study",
+                                "due": "Today@7:00"
+                            }
+                        },
+                        {
+                            "type": "addcard",
+                            "params": {
+                                "name": "Work Out",
+                                "due": "Today@5:00"
                             }
                         }
                     ]
                 }
             ]
+        },
+        {
+            "name": "find-tasks-for-today",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "card",
+                    "filters": [
+                        {
+                            "dueBefore": "today+1"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "move",
+                            "params": {
+                                "board": "personal",
+                                "list": "today"
+                            }
+                        }
+                    ]
+                }
+            ] 
         }
     ]
 }

@@ -2,7 +2,7 @@
     "provider": "trello",
     "policies": [
         {
-            "name": "create-daily-tasks",
+            "name": "create-weekly-tasks",
             "resource": "board",
             "filters": [
                 {
@@ -22,7 +22,8 @@
                             "type": "addcard",
                             "params": {
                                 "name": "Visit someone in the ward",
-                                "due": "Tuesday@20:00"
+                                "due": "Tuesday@20:00",
+                                "labels": "3,church"
                             }
                         },
                         {
@@ -36,54 +37,100 @@
                             "type": "addcard",
                             "params": {
                                 "name": "Make sure sacrament meeting spreadsheet is up to date",
-                                "due": "Friday@12:00"
+                                "due": "Friday@12:00",
+                                "labels": "1,anytime"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Plan a date night for the week",
-                                "due": "Sunday@20:00"
+                                "due": "Sunday@20:00",
+                                "labels": "2,anytime"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Approve and send the newsletter for the week",
-                                "due": "Monday@13:00"
+                                "due": "Tuesday@13:00",
+                                "labels": "1,anytime"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Reach out to a sibling",
-                                "due": "Tuesday@16:00"
+                                "due": "Tuesday@16:00",
+                                "labels": "2,phone"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Reach out to a mission companion or friend",
-                                "due": "Wednesday@16:00"
+                                "due": "Wednesday@16:00",
+                                "labels": "2,phone"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Reach out to a friend",
-                                "due": "Thursday@16:00"
+                                "due": "Thursday@16:00",
+                                "labels": "2,phone"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Reach out to a mentor/contact in professional network",
-                                "due": "Monday@16:00"
+                                "due": "Monday@16:00",
+                                "labels": "2,phone"
                             }
                         }
                     ]
                 }
             ]
+        },
+        {
+            "name": "find-tasks-for-this-week",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "backlog"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "resource": "card",
+                            "filters": [
+                                {
+                                    "dueBefore": "today+7"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "move",
+                                    "params": {
+                                        "board": "personal",
+                                        "list": "this week"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                    
+                }
+            ] 
         }
     ]
 }
