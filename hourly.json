@@ -2,7 +2,7 @@
     "provider": "trello",
     "policies": [
         {
-            "name": "create-daily-tasks",
+            "name": "archive-done-tasks",
             "resource": "board",
             "filters": [
                 {
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "name": "create-daily-tasks",
+            "name": "archive-done-tasks",
             "resource": "board",
             "filters": [
                 {

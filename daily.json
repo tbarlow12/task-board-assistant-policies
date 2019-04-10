@@ -49,14 +49,16 @@
                             "type": "addcard",
                             "params": {
                                 "name": "Gospel Study",
-                                "due": "Today@7:00"
+                                "due": "Today@7:00",
+                                "labels": "1,church,generated"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Work Out",
-                                "due": "Today@5:00"
+                                "due": "Today@5:00",
+                                "labels": "2,generated"
                             }
                         }
                     ]

@@ -2,6 +2,35 @@
     "provider": "trello",
     "policies": [
         {
+            "name": "archive-done-tasks",
+            "resource": "board",
+            "filters": [
+                {
+                    "name": "personal"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "list",
+                    "filters": [
+                        {
+                            "name": "done"
+                        }
+                    ],
+                    "children": [
+                        {
+                            "resource": "card",
+                            "actions": [
+                                {
+                                    "type": "archive"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "create-weekly-tasks",
             "resource": "board",
             "filters": [
@@ -23,14 +52,15 @@
                             "params": {
                                 "name": "Visit someone in the ward",
                                 "due": "Tuesday@20:00",
-                                "labels": "3,church"
+                                "labels": "3,church,generated"
                             }
                         },
                         {
                             "type": "addcard",
                             "params": {
                                 "name": "Make sure speaking assignments have been made",
-                                "due": "Sunday@20:00"
+                                "due": "Sunday@20:00",
+                                "labels": "2,church,generated"
                             }
                         },
                         {
@@ -38,7 +68,7 @@
                             "params": {
                                 "name": "Make sure sacrament meeting spreadsheet is up to date",
                                 "due": "Friday@12:00",
-                                "labels": "1,anytime"
+                                "labels": "1,anytime,generated"
                             }
                         },
                         {
@@ -46,7 +76,7 @@
                             "params": {
                                 "name": "Plan a date night for the week",
                                 "due": "Sunday@20:00",
-                                "labels": "2,anytime"
+                                "labels": "2,anytime,generated"
                             }
                         },
                         {
@@ -54,7 +84,7 @@
                             "params": {
                                 "name": "Approve and send the newsletter for the week",
                                 "due": "Tuesday@13:00",
-                                "labels": "1,anytime"
+                                "labels": "1,anytime,generated"
                             }
                         },
                         {
@@ -62,7 +92,7 @@
                             "params": {
                                 "name": "Reach out to a sibling",
                                 "due": "Tuesday@16:00",
-                                "labels": "2,phone"
+                                "labels": "2,phone,generated"
                             }
                         },
                         {
@@ -70,7 +100,7 @@
                             "params": {
                                 "name": "Reach out to a mission companion or friend",
                                 "due": "Wednesday@16:00",
-                                "labels": "2,phone"
+                                "labels": "2,phone,generated"
                             }
                         },
                         {
@@ -78,7 +108,7 @@
                             "params": {
                                 "name": "Reach out to a friend",
                                 "due": "Thursday@16:00",
-                                "labels": "2,phone"
+                                "labels": "2,phone,generated"
                             }
                         },
                         {
@@ -86,7 +116,7 @@
                             "params": {
                                 "name": "Reach out to a mentor/contact in professional network",
                                 "due": "Monday@16:00",
-                                "labels": "2,phone"
+                                "labels": "2,phone,generated"
                             }
                         }
                     ]
