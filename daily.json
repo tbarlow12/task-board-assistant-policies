@@ -29,43 +29,6 @@
             ]
         },
         {
-            "name": "create-daily-tasks",
-            "resource": "board",
-            "filters": [
-                {
-                    "name": "personal"
-                }
-            ],
-            "children": [
-                {
-                    "resource": "list",
-                    "filters": [
-                        {
-                            "name": "today"
-                        }
-                    ],
-                    "actions": [
-                        {
-                            "type": "addcard",
-                            "params": {
-                                "name": "Gospel Study",
-                                "due": "Today@22:00",
-                                "labels": "1,church,generated"
-                            }
-                        },
-                        {
-                            "type": "addcard",
-                            "params": {
-                                "name": "Work Out",
-                                "due": "Today@22:00",
-                                "labels": "2,generated"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "find-tasks-for-today",
             "resource": "board",
             "filters": [
